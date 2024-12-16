@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://mattchapm.github.io/blog/scrollytelling_panic_buying.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Matt Chapman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://mattchapm.github.io/blog/lightning-charge-fill.ico">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./Matt Chapman_files/bootstrap.min.css">
+    <script src="./Matt Chapman_files/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./Matt Chapman_files/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preload" href="https://mattchapm.github.io/styles/fonts/roboto/roboto-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="https://mattchapm.github.io/styles/fonts/roboto/roboto-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <!-- <link rel="preload" href="/styles/fonts/recoleta/RecoletaBlack.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="/styles/fonts/recoleta/RecoletaSemiBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="/styles/fonts/recoleta/RecoletaMedium.woff2" as="font" type="font/woff2" crossorigin="crossorigin"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Matt Chapman_files/css2" rel="stylesheet">
+
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar justify-content-between">
+        <div class="container-lg">
+            <a href="https://mattchapm.github.io/index.html" class="navbar-brand">Matt Chapman</a>
+            <!-- <div class="d-flex flex-row">
+                <div class="nav-item">Home</div>
+                <div class="nav-item">About</div>
+                <div class="nav-item">Work</div>
+            </div> -->
+        </div>
+    </nav>
+
+
+    <main>
+
+        <div class="article-header border-bottom border-black">
+            <div class="container-lg">
+                <div class="article-title-subtitle">
+                    <h1>Panic buying during Covid-19</h1>
+                    <!-- <h1>A recipe for gentrification</h1> -->
+                    <!-- <p class="lead my-4">The first wave of COVID-19 infections led to widespread stories of ‘panic buying’. In this project, I used mobility data from Google and Apple to empirically investigate the extent of panic buying in different countries.</p> -->
+                </div>
+                <div class="d-flex flex-row mt-4 mt-lg-5">
+                    <div class="button green-bg me-3">D3.js</div>
+                    <div class="button red-bg">Scrollama.js</div>
+                </div>
+                <div class="d-flex flex-column mt-4 mt-lg-5">
+                    <span class="">Posted on</span>
+                    <span class="lead">19 October 2023</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <div class="container-lg">
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5 py-3 py-lg-5">
+                        <p class="article-text mb-5">The first wave of COVID-19 infections led to widespread stories of shortages in grocery stores as consumers stocked up in anticipation of lockdowns, a behaviour colloquially known as ‘panic buying’.</p>
+                        <p class="article-text mb-5">In this short visual essay, I use mobility data from Google and Apple to compare rates of panic buying across three countries: the United Kingdom, Spain, and South Korea. The piece is primarily intended as a showcase of my skills in D3.js and Python, rather than a full investigative work.</p>
+                        <p class="article-text mb-5"><strong>Note</strong>: This page is not optimised for viewing on small screens. For the best experience, please use a laptop/desktop/tablet.</p>
+                        <h2 class="article-heading mb-5">Hands off my sprouts!</h2>
+                        <p class="article-text">Throughout the pandemic, different countries took different approaches to regulation. As the image below shows, the severity of 'stay at home' restrictions varied significantly by country over the course of the first wave of Covid-19.</p>
+                    </div>
+                </section>
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5">
+                        <h4 class="mb-1">Timeline of 'Stay at Home' restrictions, by country</h4>
+                        <p>Using the Oxford Covid-19 Government Response Tracker's (OxCGRT) 'Severity Index'</p>
+                        <img src="./Matt Chapman_files/gov_restrictions.png" class="w-100">
+                        <p>In OxCGRT's schema, a ‘0’ implies no restrictions, a ‘1’ implies vulnerable groups were recommended to shield, a ‘2’ implies a curfew whereby people were allowed out at specific times of day, and a ‘3’ implies total confinement for multiple days at a time.</p>
+                    </div>
+                </section>
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5 py-3 py-lg-5">
+                        <p class="article-text mb-5">To compare rates of panic buying, I used aggregate mobility data from Google and Apple, accessed via an API.</p>
+                        <p class="article-text mb-5">I normalised the datasets by identifying each country's 'Day 0' - the first day on which Level 2 government restrictions came into play - and plotted levels of mobility before and after this date. Each chart below shows how the level of footfall at grocery shops relative to average footfall across several months in the pre-pandemic period.</p>
+                    </div>
+                </section>
+
+                <section id="scrolly">
+
+                    <article>
+                        <div class="step p-3 d-flex flex-column justify-content-center" data-step="1" style="height: 642px;" data-scrollama-index="0">
+                            <h2>United Kingdom</h2>
+                            <p class="mx-0 my-2 p-0 text-start">In the UK, the first lockdown measures legally came into force on 26 March 2020 ('Day 0').</p>
+                            <p class="mx-0 my-2 p-0 text-start">As the graph shows, average footfall in grocery stores peaked at a rate 27% higher than the average for the previous period, but quickly fell following the introducion of lockdown restrictions.</p>
+                        </div>
+                        <div class="step p-3 d-flex flex-column justify-content-center" data-step="2" style="height: 642px;" data-scrollama-index="1">
+                            <h2>Spain</h2>
+                            <p class="m-0 p-0 text-start">Spain's 'Day 0' came 12 days earlier than the UK's, on 14 March 2020. Levels of footfall peaked at 33% - a much higher level than in the UK - and fell to lows of -90% in the weeks after lockdown measures were introduced.</p>
+                        </div>
+                        <div class="step p-3 d-flex flex-column justify-content-center" data-step="3" style="height: 642px;" data-scrollama-index="2">
+                            <h2>South Korea</h2>
+                            <p class="m-0 my-2 p-0 text-start">Unlike Spain and the UK, South Korea did not observe a big spike in footfall at grocery stores before the introduction of lockdown measures.</p>
+                            <p class="m-0 my-2 p-0 text-start">A possible explanation for this lies in the fact that South Korea was one of the few countries to "phase-in" their lockdown measures. Unlike the UK and Spain, South Korea introduced 'Level 1' regulations early on in the pandemic (on Feb 23 2020), and only introduced 'Level 2' (lockdown) regulations several weeks later.</p>
+                        </div>
+                    </article>
+        
+                    <figure id="myPlot" class="text-center" style="height: 571.333px; top: 142.833px;">
+                        <!-- <p>0</p> -->
+                        <!-- <div class="viz"></div> -->
+                    <svg height="100%" width="800px" class="mt-4"><g transform="translate(80,80)"><g transform="translate(0,390)" class="fw-lighter" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle" style="font-size: 1.2rem;"><path class="domain" stroke="currentColor" d="M0.5,6V0.5H640.5V6"></path><g class="tick" opacity="1" transform="translate(35.775590551181104,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">-20</text></g><g class="tick" opacity="1" transform="translate(86.16929133858268,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">-10</text></g><g class="tick" opacity="1" transform="translate(136.56299212598427,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">0</text></g><g class="tick" opacity="1" transform="translate(186.9566929133858,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">10</text></g><g class="tick" opacity="1" transform="translate(237.3503937007874,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">20</text></g><g class="tick" opacity="1" transform="translate(287.744094488189,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">30</text></g><g class="tick" opacity="1" transform="translate(338.1377952755905,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">40</text></g><g class="tick" opacity="1" transform="translate(388.5314960629921,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">50</text></g><g class="tick" opacity="1" transform="translate(438.9251968503937,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">60</text></g><g class="tick" opacity="1" transform="translate(489.31889763779526,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">70</text></g><g class="tick" opacity="1" transform="translate(539.7125984251968,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">80</text></g><g class="tick" opacity="1" transform="translate(590.1062992125984,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">90</text></g><g class="tick" opacity="1" transform="translate(640.5,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">100</text></g></g><text x="320" y="456.6666666666667" class="fw-lighter" style="font-size: 1.2rem; text-anchor: middle;">Days from start of lockdown</text><g class="fw-lighter" fill="none" font-size="10" font-family="sans-serif" text-anchor="end" style="font-size: 1.2rem;"><path class="domain" stroke="currentColor" d="M-6,390.5H0.5V0.5H-6"></path><g class="tick" opacity="1" transform="translate(0,390.5)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-90</text></g><g class="tick" opacity="1" transform="translate(0,358.7926829268293)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-80</text></g><g class="tick" opacity="1" transform="translate(0,327.0853658536585)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-70</text></g><g class="tick" opacity="1" transform="translate(0,295.3780487804878)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-60</text></g><g class="tick" opacity="1" transform="translate(0,263.6707317073171)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-50</text></g><g class="tick" opacity="1" transform="translate(0,231.96341463414635)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-40</text></g><g class="tick" opacity="1" transform="translate(0,200.2560975609756)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-30</text></g><g class="tick" opacity="1" transform="translate(0,168.5487804878049)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-20</text></g><g class="tick" opacity="1" transform="translate(0,136.84146341463415)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">-10</text></g><g class="tick" opacity="1" transform="translate(0,105.1341463414634)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">0</text></g><g class="tick" opacity="1" transform="translate(0,73.42682926829269)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">10</text></g><g class="tick" opacity="1" transform="translate(0,41.71951219512198)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">20</text></g><g class="tick" opacity="1" transform="translate(0,10.012195121951208)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">30</text></g></g><text transform="rotate(-90)" x="-200" y="-64" class="fw-lighter" style="font-size: 1.2rem; text-anchor: middle;">Percentage change in footfall at grocery shops</text><g><circle cx="0" cy="101.46341463414632" r="3" style="fill: red; opacity: 1;"></circle><circle cx="5.039370078740157" cy="101.46341463414632" r="3" style="fill: red; opacity: 1;"></circle><circle cx="10.078740157480315" cy="101.46341463414632" r="3" style="fill: red; opacity: 1;"></circle><circle cx="15.118110236220472" cy="98.29268292682929" r="3" style="fill: red; opacity: 1;"></circle><circle cx="20.15748031496063" cy="91.95121951219511" r="3" style="fill: red; opacity: 1;"></circle><circle cx="25.196850393700785" cy="95.1219512195122" r="3" style="fill: red; opacity: 1;"></circle><circle cx="30.236220472440944" cy="95.1219512195122" r="3" style="fill: red; opacity: 1;"></circle><circle cx="35.275590551181104" cy="98.29268292682929" r="3" style="fill: red; opacity: 1;"></circle><circle cx="40.31496062992126" cy="85.60975609756099" r="3" style="fill: red; opacity: 1;"></circle><circle cx="45.354330708661415" cy="98.29268292682929" r="3" style="fill: red; opacity: 1;"></circle><circle cx="50.39370078740157" cy="98.29268292682929" r="3" style="fill: red; opacity: 1;"></circle><circle cx="55.43307086614173" cy="91.95121951219511" r="3" style="fill: red; opacity: 1;"></circle><circle cx="60.47244094488189" cy="88.78048780487808" r="3" style="fill: red; opacity: 1;"></circle><circle cx="65.51181102362204" cy="88.78048780487808" r="3" style="fill: red; opacity: 1;"></circle><circle cx="70.55118110236221" cy="69.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="75.59055118110236" cy="69.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="80.62992125984252" cy="82.4390243902439" r="3" style="fill: red; opacity: 1;"></circle><circle cx="85.66929133858268" cy="82.4390243902439" r="3" style="fill: red; opacity: 1;"></circle><circle cx="90.70866141732283" cy="41.21951219512198" r="3" style="fill: red; opacity: 1;"></circle><circle cx="95.74803149606299" cy="38.04878048780489" r="3" style="fill: red; opacity: 1;"></circle><circle cx="100.78740157480314" cy="34.8780487804878" r="3" style="fill: red; opacity: 1;"></circle><circle cx="105.82677165354332" cy="28.536585365853625" r="3" style="fill: red; opacity: 1;"></circle><circle cx="110.86614173228347" cy="72.92682926829269" r="3" style="fill: red; opacity: 1;"></circle><circle cx="115.90551181102363" cy="101.46341463414632" r="3" style="fill: red; opacity: 1;"></circle><circle cx="120.94488188976378" cy="149.02439024390242" r="3" style="fill: red; opacity: 1;"></circle><circle cx="125.98425196850394" cy="130" r="3" style="fill: red; opacity: 1;"></circle><circle cx="131.0236220472441" cy="180.73170731707316" r="3" style="fill: red; opacity: 1;"></circle><circle cx="136.06299212598427" cy="187.0731707317073" r="3" style="fill: red; opacity: 1;"></circle><circle cx="141.10236220472441" cy="193.41463414634148" r="3" style="fill: red; opacity: 1;"></circle><circle cx="146.14173228346456" cy="196.58536585365854" r="3" style="fill: red; opacity: 1;"></circle><circle cx="151.1811023622047" cy="228.2926829268293" r="3" style="fill: red; opacity: 1;"></circle><circle cx="156.2204724409449" cy="250.4878048780488" r="3" style="fill: red; opacity: 1;"></circle><circle cx="161.25984251968504" cy="206.09756097560975" r="3" style="fill: red; opacity: 1;"></circle><circle cx="166.29921259842519" cy="199.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="171.33858267716536" cy="206.09756097560975" r="3" style="fill: red; opacity: 1;"></circle><circle cx="176.3779527559055" cy="206.09756097560975" r="3" style="fill: red; opacity: 1;"></circle><circle cx="181.41732283464566" cy="199.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="186.4566929133858" cy="218.78048780487805" r="3" style="fill: red; opacity: 1;"></circle><circle cx="191.49606299212599" cy="234.6341463414634" r="3" style="fill: red; opacity: 1;"></circle><circle cx="196.53543307086613" cy="202.9268292682927" r="3" style="fill: red; opacity: 1;"></circle><circle cx="201.57480314960628" cy="196.58536585365854" r="3" style="fill: red; opacity: 1;"></circle><circle cx="206.61417322834643" cy="190.2439024390244" r="3" style="fill: red; opacity: 1;"></circle><circle cx="211.65354330708664" cy="168.0487804878049" r="3" style="fill: red; opacity: 1;"></circle><circle cx="216.69291338582678" cy="209.2682926829268" r="3" style="fill: red; opacity: 1;"></circle><circle cx="221.73228346456693" cy="206.09756097560975" r="3" style="fill: red; opacity: 1;"></circle><circle cx="226.77165354330708" cy="304.390243902439" r="3" style="fill: red; opacity: 1;"></circle><circle cx="231.81102362204726" cy="234.6341463414634" r="3" style="fill: red; opacity: 1;"></circle><circle cx="236.8503937007874" cy="187.0731707317073" r="3" style="fill: red; opacity: 1;"></circle><circle cx="241.88976377952756" cy="190.2439024390244" r="3" style="fill: red; opacity: 1;"></circle><circle cx="246.9291338582677" cy="190.2439024390244" r="3" style="fill: red; opacity: 1;"></circle><circle cx="251.96850393700788" cy="199.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="257.00787401574803" cy="221.9512195121951" r="3" style="fill: red; opacity: 1;"></circle><circle cx="262.0472440944882" cy="231.46341463414635" r="3" style="fill: red; opacity: 1;"></circle><circle cx="267.0866141732283" cy="199.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="272.12598425196853" cy="193.41463414634148" r="3" style="fill: red; opacity: 1;"></circle><circle cx="277.1653543307087" cy="193.41463414634148" r="3" style="fill: red; opacity: 1;"></circle><circle cx="282.20472440944883" cy="190.2439024390244" r="3" style="fill: red; opacity: 1;"></circle><circle cx="287.244094488189" cy="187.0731707317073" r="3" style="fill: red; opacity: 1;"></circle><circle cx="292.2834645669291" cy="206.09756097560975" r="3" style="fill: red; opacity: 1;"></circle><circle cx="297.3228346456693" cy="221.9512195121951" r="3" style="fill: red; opacity: 1;"></circle><circle cx="302.3622047244094" cy="196.58536585365854" r="3" style="fill: red; opacity: 1;"></circle><circle cx="307.4015748031496" cy="209.2682926829268" r="3" style="fill: red; opacity: 1;"></circle><circle cx="312.4409448818898" cy="199.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="317.4803149606299" cy="193.41463414634148" r="3" style="fill: red; opacity: 1;"></circle><circle cx="322.5196850393701" cy="190.2439024390244" r="3" style="fill: red; opacity: 1;"></circle><circle cx="327.5590551181102" cy="199.7560975609756" r="3" style="fill: red; opacity: 1;"></circle><circle cx="332.59842519685037" cy="221.9512195121951" r="3" style="fill: red; opacity: 1;"></circle><circle cx="337.6377952755905" cy="190.2439024390244" r="3" style="fill: red; opacity: 1;"></circle><circle cx="342.6771653543307" cy="183.90243902439025" r="3" style="fill: red; opacity: 1;"></circle><circle cx="347.7165354330709" cy="174.390243902439" r="3" style="fill: red; opacity: 1;"></circle><circle cx="352.755905511811" cy="152.1951219512195" r="3" style="fill: red; opacity: 1;"></circle><circle cx="357.79527559055117" cy="193.41463414634148" r="3" style="fill: red; opacity: 1;"></circle><circle cx="362.8346456692913" cy="196.58536585365854" r="3" style="fill: red; opacity: 1;"></circle><circle cx="367.87401574803147" cy="221.9512195121951" r="3" style="fill: red; opacity: 1;"></circle><circle cx="372.9133858267716" cy="183.90243902439025" r="3" style="fill: red; opacity: 1;"></circle><circle cx="377.95275590551176" cy="177.5609756097561" r="3" style="fill: red; opacity: 1;"></circle><circle cx="382.99212598425197" cy="177.5609756097561" r="3" style="fill: red; opacity: 1;"></circle><circle cx="388.0314960629921" cy="171.21951219512192" r="3" style="fill: red; opacity: 1;"></circle><circle cx="393.07086614173227" cy="171.21951219512192" r="3" style="fill: red; opacity: 1;"></circle><circle cx="398.1102362204724" cy="183.90243902439025" r="3" style="fill: red; opacity: 1;"></circle><circle cx="403.14960629921256" cy="196.58536585365854" r="3" style="fill: red; opacity: 1;"></circle><circle cx="408.1889763779527" cy="168.0487804878049" r="3" style="fill: red; opacity: 1;"></circle><circle cx="413.22834645669286" cy="161.70731707317074" r="3" style="fill: red; opacity: 1;"></circle><circle cx="418.267716535433" cy="155.36585365853657" r="3" style="fill: red; opacity: 1;"></circle><circle cx="423.3070866141733" cy="155.36585365853657" r="3" style="fill: red; opacity: 1;"></circle><circle cx="428.3464566929134" cy="161.70731707317074" r="3" style="fill: red; opacity: 1;"></circle><circle cx="433.38582677165357" cy="177.5609756097561" r="3" style="fill: red; opacity: 1;"></circle><circle cx="438.4251968503937" cy="183.90243902439025" r="3" style="fill: red; opacity: 1;"></circle><circle cx="443.46456692913387" cy="177.5609756097561" r="3" style="fill: red; opacity: 1;"></circle><circle cx="448.503937007874" cy="149.02439024390242" r="3" style="fill: red; opacity: 1;"></circle><circle cx="453.54330708661416" cy="152.1951219512195" r="3" style="fill: red; opacity: 1;"></circle><circle cx="458.5826771653543" cy="142.6829268292683" r="3" style="fill: red; opacity: 1;"></circle><circle cx="463.6220472440945" cy="142.6829268292683" r="3" style="fill: red; opacity: 1;"></circle><circle cx="468.66141732283467" cy="155.36585365853657" r="3" style="fill: red; opacity: 1;"></circle><circle cx="473.7007874015748" cy="164.8780487804878" r="3" style="fill: red; opacity: 1;"></circle><circle cx="478.74015748031496" cy="145.85365853658539" r="3" style="fill: red; opacity: 1;"></circle><circle cx="483.7795275590551" cy="152.1951219512195" r="3" style="fill: red; opacity: 1;"></circle><circle cx="488.81889763779526" cy="164.8780487804878" r="3" style="fill: red; opacity: 1;"></circle><circle cx="493.8582677165354" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="498.89763779527556" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="503.93700787401576" cy="174.390243902439" r="3" style="fill: red; opacity: 1;"></circle><circle cx="508.9763779527559" cy="177.5609756097561" r="3" style="fill: red; opacity: 1;"></circle><circle cx="514.0157480314961" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="519.0551181102362" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="524.0944881889764" cy="164.8780487804878" r="3" style="fill: red; opacity: 1;"></circle><circle cx="529.1338582677165" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="534.1732283464567" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="539.2125984251968" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="544.2519685039371" cy="168.0487804878049" r="3" style="fill: red; opacity: 1;"></circle><circle cx="549.2913385826772" cy="149.02439024390242" r="3" style="fill: red; opacity: 1;"></circle><circle cx="554.3307086614174" cy="145.85365853658539" r="3" style="fill: red; opacity: 1;"></circle><circle cx="559.3700787401575" cy="149.02439024390242" r="3" style="fill: red; opacity: 1;"></circle><circle cx="564.4094488188977" cy="152.1951219512195" r="3" style="fill: red; opacity: 1;"></circle><circle cx="569.4488188976378" cy="139.5121951219512" r="3" style="fill: red; opacity: 1;"></circle><circle cx="574.488188976378" cy="136.34146341463415" r="3" style="fill: red; opacity: 1;"></circle><circle cx="579.5275590551181" cy="158.53658536585365" r="3" style="fill: red; opacity: 1;"></circle><circle cx="584.5669291338583" cy="145.85365853658539" r="3" style="fill: red; opacity: 1;"></circle><circle cx="589.6062992125984" cy="136.34146341463415" r="3" style="fill: red; opacity: 1;"></circle><circle cx="594.6456692913385" cy="130" r="3" style="fill: red; opacity: 1;"></circle><circle cx="599.6850393700787" cy="123.65853658536582" r="3" style="fill: red; opacity: 1;"></circle><circle cx="604.7244094488188" cy="133.1707317073171" r="3" style="fill: red; opacity: 1;"></circle><circle cx="609.763779527559" cy="152.1951219512195" r="3" style="fill: red; opacity: 1;"></circle><circle cx="614.8031496062991" cy="164.8780487804878" r="3" style="fill: red; opacity: 1;"></circle><circle cx="619.8425196850393" cy="149.02439024390242" r="3" style="fill: red; opacity: 1;"></circle><circle cx="624.8818897637796" cy="142.6829268292683" r="3" style="fill: red; opacity: 1;"></circle><circle cx="629.9212598425197" cy="145.85365853658539" r="3" style="fill: red; opacity: 1;"></circle><circle cx="634.9606299212599" cy="139.5121951219512" r="3" style="fill: red; opacity: 1;"></circle><circle cx="640" cy="142.6829268292683" r="3" style="fill: red; opacity: 1;"></circle></g><line y1="390" y2="0" x1="136.06299212598427" x2="136.06299212598427" fill="none" stroke="Grey" stroke-width="1" opacity="0.3"></line></g></svg></figure>
+        
+                </section>
+        
+                <!-- <section id="outro"></section> -->
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5 py-3 py-lg-5">
+                        <h2 class="article-heading mb-5">Methods</h2>
+                        <p class="article-text mb-5">Data analysis was conducted using Python, SQL and D3.js. To produce this piece, I used two data sources accessed via API through the OxCOVID database (Mahdi et al. 2020). First, Google mobility data from March 1 to May 1 2020 were used as a measure of footfall in grocery stores and pharmacies. In the mobility dataset, each value of daily mobility represents the percentage difference in mobility from the median value of the corresponding day in the period January 3 to February 6 2020.</p>
+                        <p class="article-text mb-5">Second, I sourced data about whether ‘Stay At Home’ restrictions were in place from the Oxford Covid-19 Government Response Tracker (OxCGRT) (Hale et al. 2020). In OxCGRT’s schema, a ‘0’ implies no restrictions, a ‘1’ implies vulnerable groups were recommended to shield, a ‘2’ implies a curfew whereby people were allowed out at specific times of day, and a ‘3’ implies total confinement for multiple days at a time.</p>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+
+    </main>
+
+    <!-- <div class='debug'></div> -->
+    <script src="./Matt Chapman_files/d3.min.js"></script>
+    <script src="./Matt Chapman_files/intersection-observer.js"></script>
+    <script src="./Matt Chapman_files/stickyfill.min.js"></script>
+    <script src="./Matt Chapman_files/scrollama.min.js"></script>
+    <script src="./Matt Chapman_files/d3-animations.js"></script>
+    <script src="./Matt Chapman_files/scrollama-settings.js"></script>
+
+
+</body></html>
