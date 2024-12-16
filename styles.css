@@ -121,6 +121,20 @@ h1 {
 }
 
 /*----------------
+| Logo |
+----------------*/
+/* Move logo to left and make smaller
+-------------------------------------*/
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 50px;
+    height: auto;
+}
+
+
+/*----------------
 | Article header |
 ----------------*/
 
@@ -133,6 +147,7 @@ h1 {
 
 .article-title-subtitle {
     max-width: 100%;
+    color: #083050;
 }
 
 /* Large screens */
