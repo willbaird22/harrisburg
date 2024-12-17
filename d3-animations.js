@@ -10,41 +10,22 @@ let crawl_concentration = [
   ["Harrisburg", 2],
   ["Richmond", 77],
   ["Charlotte", 43],
-  ["Raleigh", 66],
+  ["United States", 15],
 ];
 
 let household_income = [
-  ["Harrisburg", 99],
-  ["Richmond", 43],
-  ["Charlotte", 54],
-  ["Raleigh", 66],
+  ["Harrisburg", 77],
+  ["Richmond", 81],
+  ["Charlotte", 81],
+  ["United States", 78],
 ];
 
 let average_age = [
-  ["Harrisburg", 36],
-  ["Richmond", 43],
-  ["Charlotte", 18],
-  ["Raleigh", 23],
+  ["Harrisburg", 64],
+  ["Richmond", 70],
+  ["Charlotte", 20],
+  ["United States", 40],
 ];
-
-
-
-// Create data points
-// const numPoints = 100;
-// let unitedKingdomData = [];
-// for (let i = 0; i < numPoints; i++) {
-//     unitedKingdomData.push([Math.random() * xMax, Math.random() * yMax]);
-// }
-// let spainData = [];
-// for (let i = 0; i < numPoints; i++) {
-//     spainData.push([Math.random() * xMax, Math.random() * yMax]);
-// }
-// console.log(spainData);
-
-// let southKoreaData = [];
-// for (let i = 0; i < numPoints; i++) {
-//     southKoreaData.push([Math.random() * xMax, Math.random() * yMax]);
-// }
 
 // Append SVG Object to the Page
 const svg = d3.select("#myPlot")
@@ -119,21 +100,12 @@ svg.append('g')
   .style("fill", d => d[0] === "Harrisburg" ? "blue" : "red")
   .style("opacity", 1);
 
-// svg.append("path")
-// .datum(unitedKingdomData)
-// .attr("fill", "none")
-// .attr("stroke", "Red")
-// .attr("stroke-width", 1)
-// .attr("opacity", 0.3)
-// .attr("d", d3.line()
-//   .x(function(d) { return x(d[0]) })
-//   .y(function(d) { return y(d[1]) })
-//   );
+
 
 // Append fixed line at 0 days
 // svg.append("line")
-//    .attr("y1", y(d3.min(spainData, (d) => d[1])))
-//    .attr("y2", y(d3.max(spainData, (d) => d[1])))
+//    .attr("y1", y(d3.min(Data, (d) => d[1])))
+//    .attr("y2", y(d3.max(Data, (d) => d[1])))
 //    .attr("x1", x(0))
 //    .attr("x2", x(0))
 //    .attr("fill", "none")
@@ -185,7 +157,7 @@ function crawl_chart() {
 
 function income_chart() {
   // Update y-axis scale domain
-  y.domain([0, d3.max(household_income, d => d[1])]);
+  y.domain([70, 85]);
 
   // Redraw y-axis with animation
   svg.select(".y-axis")
@@ -241,7 +213,7 @@ function age_chart() {
   svg.select(".y-axis-label")
     .transition()
     .duration(1000)
-    .text("Average Age");
+    .text("Median Home Age");
 
   // Update bars with transition
   svg.selectAll(".bar")
