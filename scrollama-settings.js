@@ -45,23 +45,22 @@ switch(currentIndex) {
         // scatterSpain()
         // figure.select("p").text(1);
         if(currentDirection === 'up'){
-            unitedKingdomChart();
+            crawl_chart();
         }
         break;
     case 1:
         // scatterPeru();
         // figure.select("p").text(2);
-        spainChart();
-        spainLine();
+        income_chart();
         break;
     case 2:
         // scatterMoldova()
         // figure.select("p").text(3);
-        southKoreaChart();
+        age_chart();
         break;
     default:
         // figure.select("p").text(0);
-        unitedKingdomChart();
+        crawl_chart();
         break;
 }
 }
