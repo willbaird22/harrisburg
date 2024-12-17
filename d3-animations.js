@@ -51,7 +51,7 @@ svg.append("text") // x-axis label
   .attr("class", "fw-lighter")
   .style("font-size", "1.2rem")
   .style("text-anchor", "middle")
-  .text("Market");
+  .text("Region");
 
 
 // Y Axis
