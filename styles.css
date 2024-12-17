@@ -233,6 +233,7 @@ figure p {
     margin: 0 auto 2rem auto;
     /* background-color: #3b3b3b; */
     /* color: #fff; */
+    padding: 1rem;
     color: #3b3b3b;
 }
 
@@ -251,6 +252,19 @@ figure p {
     font-size: clamp(1rem, 2vw, 1.5rem);  /* Responsive text */
 }
 
+/* Slightly Smaller Screens (Laptops/Tablets) */
+@media (max-width: 1400px) {
+    .step p {
+        font-size: clamp(0.875rem, 1.2vw, 1.25rem);  /* Shrink text slightly */
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 768px) {
+    .step p {
+        font-size: 0.875rem;  /* Fixed small size for phones */
+    }
+}
 
 #outro {
     height: 640px;
