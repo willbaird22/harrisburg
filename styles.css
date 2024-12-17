@@ -26,7 +26,7 @@ body {
 } */
 
 h1 {
-    font-size: clamp(3.33rem,5vw,5rem)
+    font-size: clamp(2.5rem, 5vw, 5rem);
 }
 
 /* .lead {
@@ -183,12 +183,11 @@ h1 {
 
 #scrolly {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    /* background-color: #f3f3f3; */
+    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
     padding: 1rem;
-  }
+    gap: 1rem;  /* Add spacing between items */
+}
 
 #scrolly > * {
     -webkit-box-flex: 1;
@@ -198,9 +197,10 @@ h1 {
 
 article {
     position: relative;
-    padding-left: 0;
-    padding-right: 1rem;
-    max-width: 30rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 600px; /* Limit article width on large screens */
+    margin: 0 auto;   /* Center it */
 }
 
 figure {
@@ -224,7 +224,7 @@ figure p {
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: 8rem;
+    font-size: clamp(3rem, 8vw, 8rem);  /* Responsive font size */
     font-weight: 900;
     color: #fff;
 }
@@ -248,8 +248,9 @@ figure p {
 .step p {
     text-align: center;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);  /* Responsive text */
 }
+
 
 #outro {
     height: 640px;
