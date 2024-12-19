@@ -175,7 +175,11 @@ h1 {
     font-weight: 700;
 }
 
-
+#fullscreen-btn {
+    position: relative;
+    float: right;
+    margin-top: 10px; /* Adjust as needed */
+}
 
 /*---------------
 | Scrolling part

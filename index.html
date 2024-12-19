@@ -79,11 +79,12 @@
                         <h2 class="article-heading mb-5">Residential Crawl Spaces by County</h2>
                         <h4 class="mb-1">Dauphin County</h4>
                         <p>According to Dauphin County Tax Assessment Office - Dynamic Map</p>
-                        <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/willbaird/cm4r6igxv00cc01rych1jfg3m/draft.html?title=false&access_token=pk.eyJ1Ijoid2lsbGJhaXJkIiwiYSI6ImNtNHI2Z3V5OTAxbzQyanExamc1ZDhzMDkifQ.EkSUvrPgOkz3GMCMZvacrQ&zoomwheel=false#8.5/40.38/-76.9206" title="Dauphin County" style="border:none;"></iframe>
+                        <iframe id="map" width='100%' height='400px' src="https://api.mapbox.com/styles/v1/willbaird/cm4r6igxv00cc01rych1jfg3m/draft.html?title=false&access_token=pk.eyJ1Ijoid2lsbGJhaXJkIiwiYSI6ImNtNHI2Z3V5OTAxbzQyanExamc1ZDhzMDkifQ.EkSUvrPgOkz3GMCMZvacrQ&zoomwheel=true#8.5/40.38/-76.9206" title="Dauphin County" style="border:none;"></iframe>
+                        <button id="fullscreen-btn" onclick="toggleFullScreen()">Full Screen Map</button>
                         <p>1,254 homes are located on crawl spaces in Dauphin County.</p>
                     </div>
-                </section><br>
-
+                </section>
+                <br>
 
                 <section class="mx-0 mx-lg-5 px-0 px-lg-5">
                     <div class="mx-0 mx-lg-5 px-0 px-lg-5">
@@ -142,6 +143,32 @@
     <script src="scrollama.min.js"></script>
     <script src="d3-animations.js"></script>
     <script src="scrollama-settings.js"></script>
+    <script>
+function toggleFullScreen() {
+    const map = document.getElementById('map');
+    if (!document.fullscreenElement) {
+        if (map.requestFullscreen) {
+            map.requestFullscreen();
+        } else if (map.mozRequestFullScreen) { // Firefox
+            map.mozRequestFullScreen();
+        } else if (map.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            map.webkitRequestFullscreen();
+        } else if (map.msRequestFullscreen) { // IE/Edge
+            map.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+    }
+}
+</script>
 
 
 </body></html>
